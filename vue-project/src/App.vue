@@ -19,7 +19,7 @@ export default {
 					localStorage.getItem('user')
 				)
 			} else {
-				console.log('Hello')
+				console.log('Hello') // Timer
 			}
 		},
 	},
