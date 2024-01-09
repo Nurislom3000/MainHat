@@ -25,7 +25,7 @@ export default {
 	},
 
 	mounted() {
-		this.enterUser()
+		this.enterUser() // Hello
 	},
 }
 </script>
