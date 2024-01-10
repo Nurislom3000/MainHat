@@ -9,7 +9,7 @@
 		<h1>You have no <br />purchased products</h1>
 	</div>
 	<div v-else>
-		<button class="buy btn btn-secondary">Pay</button>
+		<button @click="updateUserServer" class="buy btn btn-secondary">Pay</button>
 
 		<div class="all">
 			<div class="basket">
@@ -53,6 +53,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
 	data() {
 		return {
@@ -71,6 +73,21 @@ export default {
 	},
 
 	methods: {
+		async updateUserServer() {
+			try {
+				await axios
+					.patch(
+						`https://b1fc734675d7d28d.mokky.dev/users/${this.user.id}`,
+						JSON.parse(localStorage.getItem('user'))
+					)
+					.then(response => {
+						console.log(response.data)
+					})
+			} catch (error) {
+				console.log(error)
+			}
+		},
+
 		userAdder() {
 			try {
 				this.user = JSON.parse(localStorage.getItem('user'))
