@@ -14,6 +14,7 @@
 					<p class="card-text">${{ product.price }}</p>
 
 					<button
+						v-change-color="product.id"
 						class="btn btn-primary"
 						@click="
 							$store.dispatch('productModule/AddToCart', product.id), shower()
