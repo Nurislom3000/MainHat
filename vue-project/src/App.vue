@@ -6,10 +6,8 @@
 import { locator } from '@/hooks/geoLocation.js'
 
 export default {
-	setup(props) {
-		const { latitude, longitude, getLocation } = locator()
-
-		return {}
+	setup() {
+		locator()
 	},
 
 	methods: {
@@ -18,8 +16,6 @@ export default {
 				this.$store.state.usersModule.user = JSON.parse(
 					localStorage.getItem('user')
 				)
-			} else {
-				console.log('Hello') // Timer
 			}
 		},
 	},

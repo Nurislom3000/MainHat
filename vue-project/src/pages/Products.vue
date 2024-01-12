@@ -2,47 +2,17 @@
 	<Header />
 	<div class="products">
 		<div class="productList">
-			<div
+			<productCard
 				v-for="product in products"
 				:key="product.id"
-				class="card"
-				style="width: 18rem"
-			>
-				<img :src="product.imgURL" class="card-img-top" alt="..." />
-				<div class="card-body">
-					<h5 class="card-title">{{ product.title }}</h5>
-					<p class="card-text">${{ product.price }}</p>
-
-					<button
-						v-change-color="product.id"
-						class="btn btn-primary"
-						@click="
-							$store.dispatch('productModule/AddToCart', product.id), shower()
-						"
-					>
-						Add
-					</button>
-				</div>
-			</div>
+				:product="product"
+				:shower="this.shower"
+			/>
 		</div>
 	</div>
 
 	<Transition class="bought" name="bounce">
-		<div v-if="show">
-			<div style="z-index: 11">
-				<div
-					id="liveToast"
-					role="alert"
-					aria-live="assertive"
-					aria-atomic="true"
-				>
-					<div class="toast-header">
-						<strong class="me-auto">✅</strong>
-						<span>You have bought It</span>
-					</div>
-				</div>
-			</div>
-		</div>
+		<Toast v-if="show" />
 	</Transition>
 </template>
 
