@@ -33,13 +33,21 @@ export const usersModule = {
 						user => user.email == state.user.email
 					)
 
-					if (state.user.email == '' || state.user.pass == '') {
+					function isValidEmail(email) {
+						let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+						return emailRegex.test(email)
+					}
+
+					if (isValidEmail(state.user.email) && state.user.pass.length >= 3) {
+						dispatch('sendUser')
+						router.push('/signed')
+					} else if (state.user.email == '' || state.user.pass == '') {
 						alert('Please write your email and password')
 					} else if (hasUser == true) {
 						alert('This email has been already used. Enter another email')
 					} else {
-						dispatch('sendUser')
-						router.push('/signed')
+						alert('Incorrect email or Password')
 					}
 				})
 		},

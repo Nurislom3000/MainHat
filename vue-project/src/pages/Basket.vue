@@ -2,7 +2,7 @@
 	<Header />
 	<NoBasket v-if="basket == undefined" />
 	<div v-else>
-		<button v-update-server class="buy btn btn-secondary">Pay</button>
+		<Payed />
 		<Purchased />
 	</div>
 </template>
@@ -10,6 +10,8 @@
 <script>
 import Purchased from '@/components/Purchased.vue'
 import NoBasket from '@/components/NoBasket.vue'
+import Payed from '@/components/Payed.vue'
+
 export default {
 	computed: {
 		basket() {
@@ -20,16 +22,6 @@ export default {
 			}
 		},
 	},
-	components: { NoBasket, Purchased },
+	components: { NoBasket, Purchased, Payed },
 }
 </script>
-
-<style scoped>
-.buy {
-	position: fixed;
-	right: 10px;
-	bottom: 10px;
-	width: 5%;
-	background: #212529;
-}
-</style>
