@@ -39,11 +39,6 @@ export const usersModule = {
 						alert('This email has been already used. Enter another email')
 					} else {
 						dispatch('sendUser')
-						state.user = {
-							email: '',
-							pass: '',
-							basket: [],
-						}
 						router.push('/signed')
 					}
 				})
@@ -62,6 +57,7 @@ export const usersModule = {
 						state.user = hasUser
 						router.push('/signed')
 						localStorage.setItem('user', JSON.stringify(state.user))
+						console.log(hasUser)
 					} else {
 						alert('Incorrect email or password')
 					}

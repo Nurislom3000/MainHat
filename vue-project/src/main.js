@@ -1,6 +1,6 @@
 import './assets/main.css'
 
-import VBuyColor from '@/directives/VBuyColor.js'
+import directives from '@/directives'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router/router.js'
@@ -10,7 +10,9 @@ import store from '@/store/index.js'
 const app = createApp(App)
 app.use(store).use(router).mount('#app')
 
-app.directive('change-color', VBuyColor)
+directives.forEach(directive => {
+	app.directive(directive.name, directive)
+})
 
 UI.forEach(component => {
 	app.component(component.name, component)

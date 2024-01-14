@@ -1,5 +1,5 @@
 export default {
-	mounted(el, binding) {
+	mounted(el) {
 		el.addEventListener('click', () => {
 			el.style.backgroundColor = 'green'
 
@@ -8,4 +8,6 @@ export default {
 			}, 1000)
 		})
 	},
+
+	name: 'change-color',
 }

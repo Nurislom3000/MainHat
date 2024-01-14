@@ -3,7 +3,6 @@
 		<div class="mb-3">
 			<label for="exampleInputEmail1" class="form-label">Email address</label>
 			<input
-				:value="IUser.email"
 				@input="emailUpdate"
 				type="email"
 				class="form-control"
@@ -16,7 +15,6 @@
 		<div class="mb-3">
 			<label for="exampleInputPassword1" class="form-label">Password</label>
 			<input
-				:value="IUser.password"
 				@input="passwordUpdate"
 				type="password"
 				class="form-control"
@@ -25,26 +23,23 @@
 		</div>
 
 		<button
-			@click="this.$store.dispatch('checkUser', this.$router), cleanInputs()"
+			@click="this.$store.dispatch(`${formFunction}`, this.$router)"
 			type="submit"
 			class="btn btn-primary"
 		>
 			Submit
 		</button>
+		<br />
+		<slot />
 	</form>
 </template>
 
 <script>
-import { mapMutations, mapActions, mapState } from 'vuex'
+import { mapMutations } from 'vuex'
 
 export default {
-	data() {
-		return {
-			IUser: {
-				email: '',
-				password: '',
-			},
-		}
+	props: {
+		formFunction: [String],
 	},
 
 	methods: {
@@ -63,4 +58,12 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+form {
+	margin-top: 8%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+</style>
