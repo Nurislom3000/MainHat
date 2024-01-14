@@ -65,16 +65,6 @@ export default {
 	grid-template-columns: 25% 25% 25% 25%;
 }
 
-.card {
-	margin: 10px;
-	margin-bottom: 66px;
-}
-
-img {
-	width: 100%;
-	height: 80%;
-}
-
 .bounce-enter-active {
 	animation: bounce-in 0.5s;
 }

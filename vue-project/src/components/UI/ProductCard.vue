@@ -29,4 +29,14 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.card {
+	margin: 10px;
+	margin-bottom: 66px;
+}
+
+img {
+	width: 100%;
+	height: 80%;
+}
+</style>
