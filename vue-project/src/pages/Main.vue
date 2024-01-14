@@ -1,35 +1,34 @@
 <template>
 	<Header />
-	<div>
-		<div class="main">
-			<div class="px-3 main_content">
-				<h1>Welcome to <span>MainHat</span></h1>
-				<p>
-					MainHat is a simple and convenient online store. Being a
-					multifunctional<br />
-					Internet store, it retains the simplicity of the interface. You can
-					<br />read more in the "Description" section.
-				</p>
 
-				<div class="button">
-					<button
-						v-if="user == undefined"
-						@click="$router.push('/reg')"
-						type="button"
-						class="btn btn-light"
-					>
-						Login
-					</button>
+	<div class="main">
+		<div class="px-3 main_content">
+			<h1>Welcome to <span>MainHat</span></h1>
+			<p>
+				MainHat is a simple and convenient online store. Being a
+				multifunctional<br />
+				Internet store, it retains the simplicity of the interface. You can
+				<br />read more in the "Description" section.
+			</p>
 
-					<button
-						v-else
-						@click="$router.push('/products')"
-						type="button"
-						class="btn btn-light"
-					>
-						Store
-					</button>
-				</div>
+			<div class="button">
+				<button
+					v-if="user == undefined"
+					@click="$router.push('/reg')"
+					type="button"
+					class="btn btn-light"
+				>
+					Login
+				</button>
+
+				<button
+					v-else
+					@click="$router.push('/products')"
+					type="button"
+					class="btn btn-light"
+				>
+					Store
+				</button>
 			</div>
 		</div>
 	</div>
