@@ -1,14 +1,12 @@
 import axios from 'axios'
 
 export default {
-	mounted(el) {
+	mounted(el, ID) {
 		async function updateUserServer() {
 			try {
 				await axios
 					.patch(
-						`https://b1fc734675d7d28d.mokky.dev/users/${
-							JSON.parse(localStorage.getItem('user')).id
-						}`,
+						`https://b1fc734675d7d28d.mokky.dev/users/${ID}`,
 						JSON.parse(localStorage.getItem('user'))
 					)
 					.then(response => {

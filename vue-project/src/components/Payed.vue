@@ -1,6 +1,10 @@
 <template>
 	<div>
-		<button @click="marckShow" v-update-server class="buy btn btn-secondary">
+		<button
+			@click="marckShow"
+			v-update-server="user.id"
+			class="buy btn btn-secondary"
+		>
 			Pay
 		</button>
 
@@ -27,9 +31,9 @@ function marckShow() {
 	}, 1000)
 	user.basket = []
 	localStorage.setItem('user', JSON.stringify(user))
-	setTimeout(() => {
-		location.reload()
-	}, 1380)
+	// setTimeout(() => {
+	// 	location.reload()
+	// }, 1380)
 }
 </script>
 
