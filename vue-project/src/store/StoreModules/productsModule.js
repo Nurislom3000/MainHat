@@ -31,12 +31,10 @@ export const productsModule = {
 						if (hasProduct != -1) {
 							user.basket[hasProduct].count++
 							localStorage.setItem('user', JSON.stringify(user))
-							console.log('hello')
 						} else {
 							soldProduct.count++
 							user.basket.push(soldProduct)
 							localStorage.setItem('user', JSON.stringify(user))
-							console.log('no')
 						}
 					} catch (error) {
 						router.push('/reg')
