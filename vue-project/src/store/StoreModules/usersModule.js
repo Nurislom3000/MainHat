@@ -20,9 +20,12 @@ export const usersModule = {
 
 	actions: {
 		async sendUser({ state }) {
-			state.user.id = Date.now()
-			localStorage.setItem('user', JSON.stringify(state.user))
-			await axios.post('https://b1fc734675d7d28d.mokky.dev/users', state.user)
+			await axios
+				.post('https://b1fc734675d7d28d.mokky.dev/users', state.user)
+				.then(response => {
+					state.user.id = response.data.id
+					localStorage.setItem('user', JSON.stringify(state.user))
+				})
 		},
 
 		async checkUser({ state, dispatch }, router) {

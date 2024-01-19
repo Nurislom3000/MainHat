@@ -28,9 +28,10 @@ function marckShow() {
 	show.value = true
 	setTimeout(() => {
 		show.value = false
+		user.basket = []
+		localStorage.setItem('user', JSON.stringify(user))
 	}, 1000)
-	user.basket = []
-	localStorage.setItem('user', JSON.stringify(user))
+
 	setTimeout(() => {
 		location.reload()
 	}, 1380)
