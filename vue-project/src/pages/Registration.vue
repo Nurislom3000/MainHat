@@ -2,7 +2,7 @@
 	<div class="reg">
 		<Header />
 		<br />
-		<Form :formFunction="'getUsers'"
+		<Form :showName="false" :formFunction="'getUsers'"
 			><router-link to="/sign">or create an account</router-link></Form
 		>
 	</div>

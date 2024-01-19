@@ -1,6 +1,6 @@
 <template>
 	<Header />
-	<Form :formFunction="'checkUser'" />
+	<Form :showName="true" :formFunction="'checkUser'" />
 </template>
 
 <script>

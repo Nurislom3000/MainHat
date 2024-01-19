@@ -1,6 +1,6 @@
 <template>
 	<form @submit.prevent.stop>
-		<div class="mb-3">
+		<div v-if="showName" class="mb-3">
 			<label class="form-label">Name</label>
 			<input @input="nameUpdate" type="text" class="form-control" />
 		</div>
@@ -34,6 +34,7 @@ import { mapMutations } from 'vuex'
 export default {
 	props: {
 		formFunction: [String],
+		showName: [Boolean],
 	},
 
 	methods: {
