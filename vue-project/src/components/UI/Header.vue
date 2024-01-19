@@ -63,7 +63,9 @@
 						</button>
 					</div>
 
-					<h1 v-else>Hello</h1>
+					<div v-else class="btn user">
+						<h1>{{ user }}</h1>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -75,6 +77,15 @@ export default {
 	name: 'Header',
 
 	computed: {
+		user() {
+			try {
+				return JSON.parse(localStorage.getItem('user'))
+					.name.charAt(0)
+					.toUpperCase()
+			} catch (error) {
+				return undefined
+			}
+		},
 		isUser() {
 			try {
 				if (JSON.parse(localStorage.getItem('user')).basket != undefined) {
@@ -101,5 +112,20 @@ header {
 	height: 50px;
 	margin-right: 20px;
 	border-radius: 10px;
+}
+
+.user {
+	border-radius: 100px;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: grey;
+}
+
+h1 {
+	font-size: 30px;
+	margin: 0 auto;
 }
 </style>

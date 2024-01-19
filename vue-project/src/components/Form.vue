@@ -1,25 +1,19 @@
 <template>
 	<form @submit.prevent.stop>
 		<div class="mb-3">
-			<label for="exampleInputEmail1" class="form-label">Email address</label>
-			<input
-				@input="emailUpdate"
-				type="email"
-				class="form-control"
-				id="exampleInputEmail1"
-			/>
+			<label class="form-label">Name</label>
+			<input @input="nameUpdate" type="text" class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Email address</label>
+			<input @input="emailUpdate" type="email" class="form-control" />
 			<div id="emailHelp" class="form-text">
 				We'll never share your email with anyone else.
 			</div>
 		</div>
 		<div class="mb-3">
-			<label for="exampleInputPassword1" class="form-label">Password</label>
-			<input
-				@input="passwordUpdate"
-				type="password"
-				class="form-control"
-				id="exampleInputPassword1"
-			/>
+			<label class="form-label">Password</label>
+			<input @input="passwordUpdate" type="password" class="form-control" />
 		</div>
 
 		<button
@@ -46,6 +40,7 @@ export default {
 		...mapMutations({
 			updateEmail: 'updateEmail',
 			updatePassword: 'updatePassword',
+			updateName: 'updateName',
 		}),
 
 		emailUpdate(event) {
@@ -53,6 +48,9 @@ export default {
 		},
 		passwordUpdate(event) {
 			this.updatePassword(event.target.value)
+		},
+		nameUpdate(event) {
+			this.updateName(event.target.value)
 		},
 	},
 }

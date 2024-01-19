@@ -3,6 +3,7 @@ import axios from 'axios'
 export const usersModule = {
 	state: {
 		user: {
+			name: '',
 			email: '',
 			pass: '',
 			basket: [],
@@ -15,6 +16,9 @@ export const usersModule = {
 		},
 		updatePassword(state, newVal) {
 			state.user.pass = newVal
+		},
+		updateName(state, newVal) {
+			state.user.name = newVal
 		},
 	},
 
@@ -42,7 +46,11 @@ export const usersModule = {
 						return emailRegex.test(email)
 					}
 
-					if (isValidEmail(state.user.email) && state.user.pass.length >= 3) {
+					if (
+						isValidEmail(state.user.email) &&
+						state.user.pass.length >= 3 &&
+						state.user.name.length >= 3
+					) {
 						dispatch('sendUser')
 						router.push('/signed')
 					} else if (state.user.email == '' || state.user.pass == '') {
