@@ -45,7 +45,7 @@ export default {
 img {
 	padding: 0;
 	width: 100%;
-	height: 50%;
+	height: 73%;
 }
 
 .btn-danger {
@@ -54,5 +54,9 @@ img {
 
 .href {
 	border-radius: 0;
+}
+
+.card-body {
+	height: 27%;
 }
 </style>
