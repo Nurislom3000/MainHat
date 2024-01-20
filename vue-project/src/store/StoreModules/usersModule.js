@@ -74,6 +74,7 @@ export const usersModule = {
 
 					if (hasUser != undefined) {
 						state.user = hasUser
+						state.user.basket = []
 						router.push('/signed')
 						localStorage.setItem('user', JSON.stringify(state.user))
 						console.log(hasUser)
