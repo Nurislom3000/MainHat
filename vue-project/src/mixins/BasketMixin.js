@@ -3,10 +3,11 @@ export default {
 		userAdder() {
 			try {
 				this.user = JSON.parse(localStorage.getItem('user'))
-				console.log(this.user)
+				console.log(this.user.basket[0].count)
 			} catch (error) {
 				this.user = undefined
 				console.log(this.JSON.parse(localStorage.getItem('user')))
+				console.error(error)
 			}
 		},
 		delProduct(ID) {

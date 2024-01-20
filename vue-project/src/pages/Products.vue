@@ -1,5 +1,6 @@
 <template>
 	<Header />
+
 	<div class="products">
 		<div class="productList">
 			<productCard
@@ -25,18 +26,15 @@ export default {
 			show: false,
 		}
 	},
-
 	computed: {
 		...mapState({
 			products: state => state.productModule.products,
 		}),
 	},
-
 	methods: {
 		...mapActions({
 			getProducts: 'productModule/getProducts',
 		}),
-
 		shower() {
 			this.show = true
 			setTimeout(() => {
@@ -44,7 +42,6 @@ export default {
 			}, 1000)
 		},
 	},
-
 	mounted() {
 		this.getProducts()
 	},
