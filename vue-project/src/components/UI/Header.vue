@@ -63,9 +63,15 @@
 						</button>
 					</div>
 
-					<div v-else class="btn user">
-						<h1>{{ user }}</h1>
-					</div>
+					<button @click="show = !show" v-else class="btn user">
+						<h1>{{ userName }}</h1>
+					</button>
+
+					<Transition name="bounce">
+						<div @click="show = false" v-if="show" class="accountInfo">
+							<AccountInfo :name="userName" />
+						</div>
+					</Transition>
 				</div>
 			</div>
 		</div>
@@ -73,11 +79,18 @@
 </template>
 
 <script>
+import AccountInfo from './AccountInfo.vue'
+
 export default {
 	name: 'Header',
+	data() {
+		return {
+			show: false,
+		}
+	},
 
 	computed: {
-		user() {
+		userName() {
 			try {
 				return JSON.parse(localStorage.getItem('user'))
 					.name.charAt(0)
@@ -96,6 +109,7 @@ export default {
 			}
 		},
 	},
+	components: { AccountInfo },
 }
 </script>
 
@@ -127,5 +141,32 @@ header {
 h1 {
 	font-size: 30px;
 	margin: 0 auto;
+}
+
+.accountInfo {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+}
+
+.bounce-enter-active {
+	animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+	animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1.25);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 </style>
