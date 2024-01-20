@@ -34,6 +34,10 @@ export default {
 	props: {
 		purchased: [Object],
 	},
+
+	mounted() {
+		console.log(this.purchased.price)
+	},
 }
 </script>
 
