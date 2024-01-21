@@ -30,4 +30,12 @@ export default {
 html {
 	overflow-x: hidden;
 }
+
+body::-webkit-scrollbar {
+	width: 0 !important;
+}
+body {
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none;
+}
 </style>
