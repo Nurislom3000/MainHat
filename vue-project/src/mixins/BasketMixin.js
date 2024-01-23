@@ -3,10 +3,8 @@ export default {
 		userAdder() {
 			try {
 				this.user = JSON.parse(localStorage.getItem('user'))
-				console.log(this.user)
 			} catch (error) {
 				this.user = undefined
-				console.log(this.JSON.parse(localStorage.getItem('user')))
 				console.error(error)
 			}
 		},
@@ -14,7 +12,6 @@ export default {
 			const delID = this.user.basket.findIndex(product => product.id == ID)
 			this.user.basket.splice(delID, 1)
 			localStorage.setItem('user', JSON.stringify(this.user))
-			console.log(this.userExists)
 		},
 		plus(ID) {
 			const plusID = this.user.basket.findIndex(product => product.id == ID)
