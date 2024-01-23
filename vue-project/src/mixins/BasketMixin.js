@@ -12,6 +12,8 @@ export default {
 			const delID = this.user.basket.findIndex(product => product.id == ID)
 			this.user.basket.splice(delID, 1)
 			localStorage.setItem('user', JSON.stringify(this.user))
+			if (JSON.parse(localStorage.getItem('user')).basket.length <= 0)
+				location.reload()
 		},
 		plus(ID) {
 			const plusID = this.user.basket.findIndex(product => product.id == ID)
