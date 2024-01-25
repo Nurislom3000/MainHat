@@ -1,6 +1,6 @@
 <template>
 	<Header />
-	<NoBasket v-if="basket == undefined" />
+	<NoBasket v-if="basket() == undefined" />
 	<div v-else>
 		<Payed />
 		<Purchased />
@@ -8,10 +8,15 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import Purchased from '@/components/Purchased.vue'
 import NoBasket from '@/components/NoBasket.vue'
 import Payed from '@/components/Payed.vue'
 
-let basket = ref(JSON.parse(localStorage.getItem('user')).basket[0])
+function basket() {
+	try {
+		return JSON.parse(localStorage.getItem('user')).basket[0]
+	} catch (error) {
+		return undefined
+	}
+}
 </script>

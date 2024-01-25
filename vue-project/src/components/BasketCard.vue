@@ -49,7 +49,7 @@ export default {
 img {
 	padding: 0;
 	width: 100%;
-	height: 73%;
+	height: 65%;
 }
 
 .btn-danger {
@@ -61,6 +61,6 @@ img {
 }
 
 .card-body {
-	height: 27%;
+	height: 35%;
 }
 </style>

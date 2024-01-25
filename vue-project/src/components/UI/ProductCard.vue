@@ -14,6 +14,13 @@
 			>
 				Add
 			</button>
+
+			<button
+				class="btn btn-info"
+				@click="$router.push(`/products/${product.id}`)"
+			>
+				Info
+			</button>
 		</div>
 	</div>
 </template>
@@ -38,5 +45,9 @@ export default {
 img {
 	width: 100%;
 	height: 80%;
+}
+
+.btn-info {
+	margin-left: 5%;
 }
 </style>

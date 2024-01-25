@@ -13,7 +13,7 @@
 
 			<div class="button">
 				<button
-					v-if="user == undefined"
+					v-if="user() == undefined"
 					@click="$router.push('/reg')"
 					type="button"
 					class="btn btn-light"
@@ -34,17 +34,13 @@
 	</div>
 </template>
 
-<script>
-export default {
-	computed: {
-		user() {
-			try {
-				return JSON.parse(localStorage.getItem('user'))
-			} catch (error) {
-				return undefined
-			}
-		},
-	},
+<script setup>
+function user() {
+	try {
+		return JSON.parse(localStorage.getItem('user'))
+	} catch (error) {
+		return undefined
+	}
 }
 </script>
 

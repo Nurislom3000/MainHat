@@ -6,6 +6,7 @@ import Registration from '@/pages/Registration.vue'
 import Signed from '@/pages/subPages/Signed.vue'
 import Info from '@/pages/Info.vue'
 import Basket from '@/pages/Basket.vue'
+import ProductInfo from '@/pages/subPages/ProductInfo.vue'
 
 const routes = [
 	{
@@ -15,6 +16,10 @@ const routes = [
 	{
 		path: '/products',
 		component: Products,
+	},
+	{
+		path: '/products/:id',
+		component: ProductInfo,
 	},
 	{
 		path: '/sign',
