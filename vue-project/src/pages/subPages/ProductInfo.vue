@@ -20,7 +20,12 @@
 				</h2>
 
 				<div class="selling">
-					<button type="button" class="btn btn-lg btn-success">
+					<button
+						v-change-color="product.id"
+						@click="$store.dispatch('productModule/AddToCart', product.id)"
+						type="button"
+						class="btn btn-lg btn-primary"
+					>
 						Add to basket
 					</button>
 					<button
