@@ -9,20 +9,46 @@
 			<div class="text">
 				<h1>{{ product.title }}</h1>
 				<h2>Price : ${{ product.price }}</h2>
-				<h2>For : {{ Info.for }}</h2>
-				<h2>Type : {{ Info.type }}</h2>
+				<h2>For : {{ product.for }}</h2>
+				<h2>Type : {{ product.type }}</h2>
 				<h2>
 					Sizes:
-					<button class="btn btn-outline-secondary">L</button>
-					<button class="btn btn-outline-secondary">XL</button>
-					<button class="btn btn-outline-secondary">XXL</button>
-					<button class="btn btn-outline-secondary">3XL</button>
+					<button
+						v-size-color
+						@click="this.product.size = 'L'"
+						class="btn btn-outline-secondary"
+					>
+						L
+					</button>
+					<button
+						v-size-color
+						@click="this.product.size = 'XL'"
+						class="btn btn-outline-secondary"
+					>
+						XL
+					</button>
+					<button
+						v-size-color
+						@click="this.product.size = 'XXL'"
+						class="btn btn-outline-secondary"
+					>
+						XXL
+					</button>
+					<button
+						v-size-color
+						@click="this.product.size = '3XL'"
+						class="btn btn-outline-secondary"
+					>
+						3XL
+					</button>
 				</h2>
 
 				<div class="selling">
 					<button
 						v-change-color="product.id"
-						@click="$store.dispatch('productModule/AddToCart', product.id)"
+						@click="
+							$store.dispatch('productModule/AddToCart', product.id), shower()
+						"
 						type="button"
 						class="btn btn-lg btn-primary"
 					>
@@ -32,6 +58,7 @@
 						style="margin-left: 10%"
 						type="button"
 						class="btn btn-lg btn-outline-success"
+						@click="payingDialog = true"
 					>
 						Buy now
 					</button>
@@ -39,16 +66,34 @@
 			</div>
 		</div>
 	</div>
+
+	<Transition class="bought" name="bounce">
+		<Toast v-if="show" />
+	</Transition>
+
+	<Transition name="bounce">
+		<CardPayment
+			:shower="shower"
+			@click="payingDialog = false"
+			@hide="hidePayingDialog"
+			v-show="payingDialog"
+		/>
+	</Transition>
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
+	props: {
+		shower: [Function],
+	},
+
 	data() {
 		return {
+			payingDialog: false,
+			show: false,
 			product: [],
-			Info: '',
 		}
 	},
 	methods: {
@@ -59,9 +104,18 @@ export default {
 					this.product = response.data.filter(
 						product => product.id == this.$route.params.id
 					)[0]
-					this.Info = this.product.info
-					this.Sizes = this.product.sizes
 				})
+		},
+
+		shower() {
+			this.show = true
+			setTimeout(() => {
+				this.show = false
+			}, 1000)
+		},
+
+		hidePayingDialog(event) {
+			console.log(event)
 		},
 	},
 
@@ -110,5 +164,30 @@ img {
 
 .selling {
 	margin-top: 20%;
+}
+
+.bounce-enter-active {
+	animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+	animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.bought {
+	position: fixed;
+	right: 40px;
+	bottom: 40px;
+	width: 14%;
 }
 </style>
