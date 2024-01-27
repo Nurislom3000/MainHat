@@ -4,7 +4,23 @@ import router from '@/router/router'
 export const productsModule = {
 	state: () => ({
 		products: [],
+		filteredProducts: [],
 	}),
+
+	mutations: {
+		filterProducts(state, newVal) {
+			console.log(state)
+			if (newVal != 'All') {
+				state.filteredProducts = state.products.filter(
+					product => product.type == newVal
+				)
+			} else {
+				state.filteredProducts = state.products.filter(
+					product => product == product
+				)
+			}
+		},
+	},
 
 	actions: {
 		async getProducts({ state, commit }) {
@@ -12,6 +28,7 @@ export const productsModule = {
 				.get('https://b1fc734675d7d28d.mokky.dev/products')
 				.then(response => {
 					state.products = response.data
+					state.filteredProducts = response.data
 				})
 		},
 

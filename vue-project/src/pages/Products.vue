@@ -1,11 +1,13 @@
 <template>
 	<Header />
 	<br />
-	<Selector />
+	<div class="controller">
+		<Selection :options="options" />
+	</div>
 	<div class="products">
 		<div class="productList">
 			<productCard
-				v-for="product in products"
+				v-for="product in filteredProducts"
 				:key="product.id"
 				:product="product"
 				:shower="this.shower"
@@ -18,9 +20,16 @@
 import { mapActions, mapState } from 'vuex'
 
 export default {
+	data() {
+		return {
+			options: ['head', 'body', 'knee', 'foot'],
+		}
+	},
+
 	computed: {
 		...mapState({
 			products: state => state.productModule.products,
+			filteredProducts: state => state.productModule.filteredProducts,
 		}),
 	},
 	methods: {
@@ -46,5 +55,10 @@ export default {
 	margin-top: 2%;
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
+}
+
+.controller {
+	display: flex;
+	justify-content: space-around;
 }
 </style>
