@@ -5,11 +5,27 @@
 			<span></span>
 		</label>
 		<ul class="menu__box">
-			<li><a class="menu__item" href="#">Главная</a></li>
-			<li><a class="menu__item" href="#">Проекты</a></li>
-			<li><a class="menu__item" href="#">Команда</a></li>
-			<li><a class="menu__item" href="#">Блог</a></li>
-			<li><a class="menu__item" href="#">Контакты</a></li>
+			<li>
+				<router-link to="/" class="nav-link px-2 text-white">Main</router-link>
+			</li>
+			<li>
+				<router-link to="/products" class="nav-link px-2 text-white"
+					>Products</router-link
+				>
+			</li>
+			<li>
+				<router-link to="/basket" class="nav-link px-2 text-white"
+					>Basket</router-link
+				>
+			</li>
+			<li>
+				<router-link to="/" class="nav-link px-2 text-white">FAQs</router-link>
+			</li>
+			<li>
+				<router-link to="/info" class="nav-link px-2 text-white"
+					>AboutUs</router-link
+				>
+			</li>
 		</ul>
 	</div>
 </template>
@@ -48,7 +64,7 @@ export default {
 	position: absolute;
 	width: 100%;
 	height: 2px;
-	background-color: #616161;
+	background-color: #c9c9c9;
 }
 .menu__btn > span::before {
 	content: '';
@@ -66,28 +82,16 @@ export default {
 	visibility: hidden;
 	top: 0;
 	left: -100%;
-	width: 300px;
+	width: 70%;
 	height: 100%;
 	margin: 0;
 	padding: 80px 0;
 	list-style: none;
 	text-align: center;
-	background-color: #eceff1;
+	background-color: #5f6060;
 	box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 	z-index: 20;
-}
-/* элементы меню */
-.menu__item {
-	display: block;
-	padding: 12px 24px;
-	color: #333;
-	font-family: 'Roboto', sans-serif;
-	font-size: 20px;
-	font-weight: 600;
-	text-decoration: none;
-}
-.menu__item:hover {
-	background-color: #cfd8dc;
+	transition-duration: 1s;
 }
 
 #menu__toggle:checked ~ .menu__btn > span {
