@@ -2,20 +2,24 @@
 	<header class="p-3 bg-dark text-white">
 		<div class="container">
 			<div
-				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start sub-container"
 			>
-				<router-link
-					to="/"
-					class="logo d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-				>
-					<img
-						class="logo"
-						src="https://media.istockphoto.com/id/1324569030/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/m-%D0%B1%D1%83%D0%BA%D0%B2%D0%B0-%D0%BB%D0%B0%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0.jpg?s=612x612&w=0&k=20&c=MzBvib9oyaSt9MNA-9VvsJdVHRaLjmSvegf1TDLWzL0="
-						alt="#"
-					/>
-				</router-link>
+				<Burger v-if="screen < 992" />
+				<div v-if="screen >= 992">
+					<router-link
+						to="/"
+						class="logo d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+					>
+						<img
+							class="logo"
+							src="https://media.istockphoto.com/id/1324569030/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/m-%D0%B1%D1%83%D0%BA%D0%B2%D0%B0-%D0%BB%D0%B0%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0.jpg?s=612x612&w=0&k=20&c=MzBvib9oyaSt9MNA-9VvsJdVHRaLjmSvegf1TDLWzL0="
+							alt="#"
+						/>
+					</router-link>
+				</div>
 
 				<ul
+					v-if="screen >= 992"
 					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
 				>
 					<li>
@@ -86,6 +90,7 @@ export default {
 	data() {
 		return {
 			show: false,
+			screen: 0,
 		}
 	},
 
@@ -109,6 +114,10 @@ export default {
 			}
 		},
 	},
+
+	mounted() {
+		this.screen = window.innerWidth
+	},
 	components: { AccountInfo },
 }
 </script>
@@ -119,6 +128,11 @@ header {
 	left: 0;
 	top: 0;
 	width: 100vw;
+}
+
+.sub-container {
+	display: flex;
+	justify-content: space-between !important;
 }
 
 .logo {
