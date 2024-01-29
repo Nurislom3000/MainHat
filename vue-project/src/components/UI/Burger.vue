@@ -6,24 +6,24 @@
 		</label>
 		<ul class="menu__box">
 			<li>
-				<router-link to="/" class="nav-link px-2 text-white">Main</router-link>
+				<router-link to="/" class="nav-link px-2 text-white"
+					>Main 🏠</router-link
+				>
 			</li>
 			<li>
 				<router-link to="/products" class="nav-link px-2 text-white"
-					>Products</router-link
+					>Products 🏪</router-link
 				>
 			</li>
 			<li>
 				<router-link to="/basket" class="nav-link px-2 text-white"
-					>Basket</router-link
+					>Basket 🧺</router-link
 				>
 			</li>
-			<li>
-				<router-link to="/" class="nav-link px-2 text-white">FAQs</router-link>
-			</li>
+
 			<li>
 				<router-link to="/info" class="nav-link px-2 text-white"
-					>AboutUs</router-link
+					>AboutUs ❕</router-link
 				>
 			</li>
 		</ul>
@@ -82,16 +82,18 @@ export default {
 	visibility: hidden;
 	top: 0;
 	left: -100%;
-	width: 70%;
+	width: 50%;
 	height: 100%;
 	margin: 0;
-	padding: 80px 0;
+	padding: 50% 0 0 0;
 	list-style: none;
 	text-align: center;
-	background-color: #5f6060;
+	background-color: #212529;
 	box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 	z-index: 20;
 	transition-duration: 1s;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
 
 #menu__toggle:checked ~ .menu__btn > span {
