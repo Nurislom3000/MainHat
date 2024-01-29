@@ -1,9 +1,9 @@
 <template>
 	<select
+		v-model="selectV"
 		@change="$store.commit('productModule/filterProducts', selectV)"
 		class="form-select"
 		aria-label="Default select example"
-		v-model="selectV"
 	>
 		<option selected>All</option>
 		<option v-for="option in options" :key="option" :value="option">
@@ -31,5 +31,6 @@ export default {
 <style scoped>
 select {
 	width: 20%;
+	height: 100%;
 }
 </style>

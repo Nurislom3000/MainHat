@@ -20,6 +20,10 @@ export const productsModule = {
 				)
 			}
 		},
+
+		searchProducts(state, newVal) {
+			console.log(state['products'])
+		},
 	},
 
 	actions: {
