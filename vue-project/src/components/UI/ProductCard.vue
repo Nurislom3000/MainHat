@@ -40,4 +40,54 @@ img {
 	width: 100%;
 	height: 80%;
 }
+
+@media (max-width: 903px) {
+	.card {
+		margin: 0;
+		margin: 0 auto;
+		max-width: 100%;
+		height: 100%;
+	}
+
+	h5 {
+		font-size: 90%;
+	}
+}
+
+@media (max-width: 479px) {
+	img {
+		height: 67%;
+	}
+
+	h5 {
+		font-size: 65%;
+	}
+
+	.card {
+		height: 90%;
+	}
+
+	p {
+		font-size: 70%;
+	}
+}
+
+@media (max-width: 405px) {
+	img {
+		height: 73%;
+	}
+	.card {
+		height: 93%;
+	}
+
+	h5 {
+		font-size: 90%;
+	}
+}
+
+@media (max-width: 387px) {
+	img {
+		height: 68%;
+	}
+}
 </style>

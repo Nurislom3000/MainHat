@@ -119,8 +119,16 @@ export default {
 
 @media (max-width: 903px) {
 	.productList {
-		grid-template-columns: 30% 30% 30%;
-		grid-gap: 5%;
+		grid-template-columns: 29% 29% 29%;
+		column-gap: 5%;
+		row-gap: 1%;
+	}
+}
+
+@media (max-width: 405px) {
+	.productList {
+		grid-template-columns: 45% 45%;
+		column-gap: 5%;
 	}
 }
 </style>
