@@ -37,5 +37,6 @@ body::-webkit-scrollbar {
 body {
 	overflow: -moz-scrollbars-none;
 	-ms-overflow-style: none;
+	padding-bottom: 4px;
 }
 </style>
