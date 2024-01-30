@@ -130,9 +130,12 @@ export default {
 
 .container {
 	padding: 3%;
-	min-width: 1000px;
 	display: flex;
 	justify-content: space-between;
+}
+
+.text {
+	width: 40%;
 }
 
 h1 {
@@ -189,5 +192,71 @@ img {
 	right: 40px;
 	bottom: 40px;
 	width: 14%;
+}
+
+@media (max-width: 992px) {
+	.container {
+		margin: 0;
+		min-width: 100% !important;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+
+	.btn-outline-secondary {
+		font-size: 40%;
+	}
+
+	.btn-primary {
+		font-size: 100%;
+	}
+
+	.btn-outline-success {
+		font-size: 100%;
+	}
+
+	.imgs {
+		width: 50%;
+		height: 70%;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.imgs {
+		max-width: 50%;
+		min-width: 350px;
+	}
+
+	.text {
+		text-align: center;
+		width: 100%;
+	}
+	.selling {
+		margin-top: 5%;
+	}
+}
+
+@media (max-width: 576px) {
+	.imgs {
+		min-width: 300px;
+		margin-top: 10%;
+	}
+	h1 {
+		font-size: 80px;
+	}
+	h2 {
+		font-size: 25px;
+	}
+	.selling {
+		margin-top: 10%;
+		font-size: 80%;
+	}
 }
 </style>
