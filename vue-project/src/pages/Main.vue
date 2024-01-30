@@ -77,12 +77,17 @@ button {
 }
 
 @media (max-width: 576px) {
+	h1 {
+		margin-bottom: 10%;
+		font-size: 30px;
+	}
 	.main {
-		font-size: 56%;
+		font-size: 100%;
 	}
 
 	button {
-		font-size: 10px;
+		font-size: 15px;
+		margin-top: 20px;
 	}
 }
 </style>
