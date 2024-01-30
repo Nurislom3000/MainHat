@@ -63,4 +63,51 @@ img {
 .card-body {
 	height: 35%;
 }
+
+@media (max-width: 992px) {
+	.card {
+		max-width: 90%;
+		max-height: 80%;
+	}
+}
+@media (max-width: 768px) {
+	img {
+		height: 65%;
+	}
+	.btn {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 576px) {
+	.card {
+		min-width: 110%;
+		margin-left: -12%;
+		padding-bottom: 10px;
+	}
+}
+
+@media (max-width: 389px) {
+	img {
+		height: 62%;
+	}
+
+	h5 {
+		font-size: 19px;
+	}
+
+	p {
+		font-size: 15px;
+	}
+
+	.btn {
+		font-size: 7px;
+	}
+}
+
+@media (max-width: 358px) {
+	.card {
+		min-height: 85%;
+	}
+}
 </style>

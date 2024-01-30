@@ -45,4 +45,30 @@ export default {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
 }
+
+@media (max-width: 1300px) {
+	.basket {
+		grid-template-columns: 33% 33% 33%;
+	}
+}
+
+@media (max-width: 768px) {
+	.basket {
+		grid-template-columns: 40% 40%;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 576px) {
+	.basket {
+		grid-column-gap: 15%;
+	}
+}
+
+@media (max-width: 358px) {
+	.basket {
+		grid-template-columns: 60%;
+		margin-top: 10%;
+	}
+}
 </style>

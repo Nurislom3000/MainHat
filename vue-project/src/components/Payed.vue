@@ -43,8 +43,9 @@ function marckShow() {
 	position: fixed;
 	right: 10px;
 	bottom: 10px;
-	width: 5%;
+	width: 50px;
 	background: #212529;
+	z-index: 40;
 }
 
 .bounce-enter-active {
@@ -78,7 +79,7 @@ function marckShow() {
 }
 
 img {
-	width: 19%;
-	height: 40%;
+	width: 200px;
+	height: 200px;
 }
 </style>
