@@ -72,4 +72,46 @@ h1 {
 	font-size: 20px;
 	padding: 4% 0 4% 0;
 }
+
+@media (max-width: 1200px) {
+	.userInfo {
+		width: 45%;
+		height: 65%;
+		left: 28%;
+	}
+}
+
+@media (max-width: 768px) {
+	.userInfo {
+		width: 50%;
+		height: 65%;
+		left: 25%;
+	}
+}
+
+@media (max-width: 630px) {
+	.userInfo {
+		width: 65%;
+		height: 65%;
+		left: 18%;
+	}
+}
+
+@media (max-width: 487px) {
+	.userInfo {
+		font-size: 13px;
+		height: 50%;
+		border-radius: 50px;
+		top: 30%;
+	}
+
+	.user {
+		width: 60px;
+		height: 60px;
+	}
+
+	.btn-danger {
+		font-size: 10px;
+	}
+}
 </style>

@@ -65,4 +65,10 @@ form {
 	align-items: center;
 	flex-direction: column;
 }
+
+@media (max-width: 576px) {
+	form {
+		margin-top: 20%;
+	}
+}
 </style>

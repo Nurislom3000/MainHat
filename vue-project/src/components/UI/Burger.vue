@@ -85,7 +85,7 @@ export default {
 	width: 50%;
 	height: 100%;
 	margin: 0;
-	padding: 50% 0 0 0;
+	padding: 30% 0 0 0;
 	list-style: none;
 	text-align: center;
 	background-color: #212529;

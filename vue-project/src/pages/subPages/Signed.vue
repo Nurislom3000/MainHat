@@ -10,14 +10,14 @@
 				height="57"
 			/>
 			<h1 class="display-5 fw-bold">You have already Signed In</h1>
-			<div class="col-lg-6 mx-auto">
+			<div class="text col-lg-6 mx-auto">
 				<p class="lead mb-4">
 					Quickly design and customize responsive mobile-first sites with
 					Bootstrap, the world’s most popular front-end open source toolkit,
 					featuring Sass variables and mixins, responsive grid system, extensive
 					prebuilt components, and powerful JavaScript plugins.
 				</p>
-				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+				<div class="btns d-grid gap-2 d-sm-flex justify-content-sm-center">
 					<button
 						@click="$router.push('/products')"
 						type="button"
@@ -44,8 +44,39 @@ export default {}
 
 <style scoped>
 img {
-	width: 7%;
-	height: 7%;
+	width: 90px;
+	height: 90px;
 	border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+	img {
+		width: 70px;
+		height: 70px;
+	}
+
+	h1 {
+		font-size: 27px;
+	}
+
+	p {
+		font-size: 15px;
+	}
+
+	.btn {
+		max-width: 40%;
+		font-size: 13px;
+	}
+
+	.btns {
+		display: flex !important;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 393px) {
+	.btn {
+		font-size: 8px;
+	}
 }
 </style>

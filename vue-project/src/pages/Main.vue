@@ -75,4 +75,14 @@ span {
 button {
 	font-weight: bold;
 }
+
+@media (max-width: 576px) {
+	.main {
+		font-size: 56%;
+	}
+
+	button {
+		font-size: 10px;
+	}
+}
 </style>
