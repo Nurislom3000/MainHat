@@ -72,4 +72,10 @@ input[type='number']:focus {
 	appearance: none;
 	-moz-appearance: textfield;
 }
+
+@media (max-width: 576px) {
+	.payingDialog {
+		width: 90%;
+	}
+}
 </style>

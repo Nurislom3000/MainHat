@@ -68,7 +68,7 @@
 	</div>
 
 	<Transition class="bought" name="bounce">
-		<Toast v-if="show" />
+		<Toast class="toaster" v-if="show" />
 	</Transition>
 
 	<Transition name="bounce">
@@ -132,6 +132,7 @@ export default {
 	padding: 3%;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 20px !important;
 }
 
 .text {
@@ -191,7 +192,7 @@ img {
 	position: fixed;
 	right: 40px;
 	bottom: 40px;
-	width: 14%;
+	width: 200px;
 }
 
 @media (max-width: 992px) {
@@ -240,6 +241,11 @@ img {
 	}
 	.selling {
 		margin-top: 5%;
+	}
+
+	.bought {
+		top: 5%;
+		right: 5%;
 	}
 }
 
