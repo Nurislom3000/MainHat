@@ -1,6 +1,6 @@
 <template>
 	<Header />
-	<div>
+	<div class="all">
 		<div class="px-4 py-5 my-5 text-center">
 			<img
 				class="d-block mx-auto mb-4"
@@ -75,8 +75,21 @@ img {
 }
 
 @media (max-width: 393px) {
+	.btns {
+		flex-direction: column;
+	}
 	.btn {
-		font-size: 8px;
+		max-width: 100% !important;
+		font-size: 15px;
+	}
+
+	h1 {
+		margin-bottom: 7%;
+		font-size: 22px;
+	}
+
+	.all {
+		margin-top: -15%;
 	}
 }
 </style>
