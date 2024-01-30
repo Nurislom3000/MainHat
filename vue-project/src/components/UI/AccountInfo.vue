@@ -102,7 +102,6 @@ h1 {
 		font-size: 13px;
 		height: 250px;
 		border-radius: 50px;
-		top: 30%;
 	}
 
 	.user {
