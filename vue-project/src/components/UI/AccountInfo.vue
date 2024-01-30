@@ -100,9 +100,9 @@ h1 {
 @media (max-width: 487px) {
 	.userInfo {
 		font-size: 13px;
-		height: 50%;
+		height: 40%;
 		border-radius: 50px;
-		top: 30%;
+		top: 35%;
 	}
 
 	.user {
